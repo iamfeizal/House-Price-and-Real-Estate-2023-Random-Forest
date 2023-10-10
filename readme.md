@@ -152,10 +152,11 @@ Hasil Output:
 
 ## Daftar Referensi
 
-[^1]: My reference.
 [^1]: [Analisis Perbandingan Metode Regresi Linier, Random Forest Regression dan Gradient Boosted Trees Regression Method untuk Prediksi Harga Rumah](https://journal.isas.or.id/index.php/JACOST/article/download/491/202)
-- [Prediksi Harga Rumah Menggunakan Web Scrapping dan Machine Learning dengan Algoritma Linear Regression](http://jurnal.mdp.ac.id/index.php/jatisi/article/download/701/219)
-- [Optimasi Metode Random Forest Menggunakan Principal Component Analysis Untuk Memprediksi Harga Rumah](http://etheses.uin-malang.ac.id/50422/1/210605220005.pdf)
+
+[^2]: [Prediksi Harga Rumah Menggunakan Web Scrapping dan Machine Learning dengan Algoritma Linear Regression](http://jurnal.mdp.ac.id/index.php/jatisi/article/download/701/219)
+
+[^3]: [Optimasi Metode Random Forest Menggunakan Principal Component Analysis Untuk Memprediksi Harga Rumah](http://etheses.uin-malang.ac.id/50422/1/210605220005.pdf)
 
 
 Here is a simple footnote[^1].
