@@ -2,22 +2,17 @@
 
 ## Domain Proyek
 
-Rumah merupakan kebutuhan salah satu kebutuhan pokok manusia. Kebutuhan akan tempat tinggal menjadi salah satu yang harus dipersiapkan manusia terutama untuk rencana jangka panjang. Dalam mempersiapkan rencana tersebut tentunya banyak karakteristik/fitur yang mempengaruhi termasuk harga, lokasi, luas, dan sebagainya. Maka dari itu, dibuatlah Model Machine Learning - Predictive Learning agar dapat memudahkan manusia dalam merencanakan kebutuhan tempat tinggal dengan mempertimbangkan karakteristik/fitur yang mempengaruhinya.
-  
-Referensi:
-- [Analisis Perbandingan Metode Regresi Linier, Random Forest Regression dan Gradient Boosted Trees Regression Method untuk Prediksi Harga Rumah](https://journal.isas.or.id/index.php/JACOST/article/download/491/202)
-  > [!NOTE]
-  > Hasil: Evaluasi prediksi dilakukan dengan melihat hasil error pada RMSE setiap model. Dari ketiga model tersebut, diperoleh hasil **nilai error terkecil pada algoritma Random Forest sebesar 0.440.**
-- [Prediksi Harga Rumah Menggunakan Web Scrapping dan Machine Learning dengan Algoritma Linear Regression](http://jurnal.mdp.ac.id/index.php/jatisi/article/download/701/219)
-  > [!NOTE]
-  > Hasil: Dengan algoritma linear regression untuk memprediksi harga rumah dapat memberikan hasil keakuratan prediksi harga rumah dengan baik. Adapun **hasil akurasi terbaik dengan menggunakan data set untuk training sebesar 80% dan menggunakan 20% untuk data testing.**
-- [Optimasi Metode Random Forest Menggunakan Principal Component Analysis Untuk Memprediksi Harga Rumah](http://etheses.uin-malang.ac.id/50422/1/210605220005.pdf) 
-  > [!NOTE]
-  > Hasil: Penggunaan hasil evaluasi model yang menggunakan PCA memiliki tingkat error yang lebih kecil dan nilainya lebih konsisten dibandingkan dengan hasil evaluasi tanpa PCA. Waktu pelatihan menggunakan model PCA memiliki waktu yang lebih cepat dibandingkan hanya menggunakan random forest. **Penggunaan PCA dan Random Forest memiliki hasil yang lebih optimal dibandingkan dengan yang hanya menggunakan Random Forest.**
+Rumah merupakan kebutuhan salah satu kebutuhan pokok manusia. Kebutuhan akan tempat tinggal menjadi salah satu yang harus dipersiapkan manusia terutama untuk rencana jangka panjang. Dalam mempersiapkan rencana tersebut tentunya banyak karakteristik/fitur yang mempengaruhi termasuk harga, lokasi, luas, dan sebagainya. Maka dari itu, dibuatlah Model *Machine Learning* - Predictive Learning agar dapat memudahkan manusia dalam merencanakan kebutuhan tempat tinggal dengan mempertimbangkan karakteristik/fitur yang mempengaruhinya.
+
+**Rubrik/Kriteria Tambahan**:
+- Masalah tersebut harus diselesaikan agar dapat memudahkan manusia dalam merencanakan kebutuhan tempat tinggal dengan mempertimbangkan karakteristik/fitur yang mempengaruhinya.
+- Evaluasi prediksi dilakukan dengan melihat hasil error pada RMSE setiap model. Dari ketiga model tersebut, diperoleh hasil **nilai error terkecil pada algoritma Random Forest sebesar 0.440.**
+- Dengan algoritma linear regression untuk memprediksi harga rumah dapat memberikan hasil keakuratan prediksi harga rumah dengan baik. Adapun **hasil akurasi terbaik dengan menggunakan data set untuk training sebesar 80% dan menggunakan 20% untuk data testing.**
+- Penggunaan hasil evaluasi model yang menggunakan PCA memiliki tingkat error yang lebih kecil dan nilainya lebih konsisten dibandingkan dengan hasil evaluasi tanpa PCA. Waktu pelatihan menggunakan model PCA memiliki waktu yang lebih cepat dibandingkan hanya menggunakan random forest. **Penggunaan PCA dan Random Forest memiliki hasil yang lebih optimal dibandingkan dengan yang hanya menggunakan Random Forest.**
 
 ## Business Understanding
 
-Saya adalah seorang praktisi machine learning ingin membuat sebuah model machine learning yang dapat membantu manusia untuk menentukan harga rumah berdasarkan karakteristik/fitur yang melekat pada rumah tersebut.
+Saya adalah seorang praktisi *machine learning* ingin membuat sebuah model *machine learning* yang dapat membantu manusia untuk menentukan harga rumah berdasarkan karakteristik/fitur yang melekat pada rumah tersebut.
 
 ### Problem Statements
 
@@ -27,14 +22,14 @@ Berdasarkan latar belakang yang telah diuraikan sebelumnya, saya akan mengembang
 
 ### Goals
 
-Untuk  menjawab pertanyaan tersebut, saya akan membuat predictive modelling dengan tujuan atau goals sebagai berikut:
+Untuk  menjawab pertanyaan tersebut, saya akan membuat predictive modelling dengan tujuan atau *goals* sebagai berikut:
 - Mengetahui fitur yang paling berkorelasi atau berpengaruh terhadap harga rumah
-- Membuat model machine learning untuk memprediksi harga rumah seakurat mungkin berdasarkan fitur yang berpengaruh
+- Membuat model *machine learning* untuk memprediksi harga rumah seakurat mungkin berdasarkan fitur yang berpengaruh
 
 ## Solution statements
-  - Menggunakan Model Algoritma Random Forest, karena berdasarkan referensi yang berjudul "Analisis Perbandingan Metode Regresi Linier, Random Forest Regression dan Gradient Boosted Trees Regression Method untuk Prediksi Harga Rumah", model terbaik untuk membuat prediksi harga rumah adalah model Random Forest karena memiliki nilai error paling kecil daripada model lainnya.
+  - Menggunakan Model Algoritma *Random Forest*, karena berdasarkan referensi yang berjudul "Analisis Perbandingan Metode Regresi Linier, *Random Forest* Regression dan Gradient Boosted Trees Regression Method untuk Prediksi Harga Rumah", model terbaik untuk membuat prediksi harga rumah adalah model *Random Forest* karena memiliki nilai error paling kecil daripada model lainnya.
   - Menggunakan rasio perbandingan dataset untuk training dan testing sebesar 80% dan 20%, karena berdasarkan referensi yang berjudul "Prediksi Harga Rumah Menggunakan Web Scrapping dan Machine Learning dengan Algoritma Linear Regression", hasil akurasi terbaik menggunakan rasio pembagian dataset tersebut.
-  - Menggunakan PCA untuk mengoptimalkan Random Forest seperti pada referensi dengan judul "Optimasi Metode Random Forest Menggunakan Principal Component Analysis Untuk Memprediksi Harga Rumah" **(Jika pada dataset terdapat fitur yang memiliki korelasi sangat tinggi)**.
+  - Menggunakan PCA untuk mengoptimalkan *Random Forest* seperti pada referensi dengan judul "Optimasi Metode *Random Forest* Menggunakan Principal Component Analysis Untuk Memprediksi Harga Rumah" **(Jika pada dataset terdapat fitur yang memiliki korelasi sangat tinggi)**.
 
 ## Data Understanding
 Pada model kali ini, saya menggunakan dataset dari Kaggle yaitu dataset Housing Price & Real Estate - 2023 dari [reenapinto](https://www.kaggle.com/reenapinto).
@@ -92,8 +87,17 @@ Sumber Dataset: [Housing Price & Real Estate - 2023](https://www.kaggle.com/data
   > Membagi dataset dengan proporsi 80:20 seperti pada referensi yang kita gunakan.
 - Standarisasi
   >Mengubah nilai fitur agar mendekati distribusi normal agar algoritma machine learning memilki performa yang baik.
-  
-  ![](/assets/images/standarisasi.png)
+
+  |       |      Beds |      Bath |     Sq.Ft |
+  |-------|----------:|----------:|----------:|
+  | count | 2452.0000 | 2452.0000 | 2452.0000 |
+  |  mean |   -0.0000 |   -0.0000 |   -0.0000 |
+  |   std |    1.0002 |    1.0002 |    1.0002 |
+  |   min |   -1.5719 |   -1.4941 |   -1.7607 |
+  |   25% |   -0.7801 |   -0.3799 |   -0.8078 |
+  |   50% |    0.0116 |    0.1772 |   -0.2351 |
+  |   75% |    0.8034 |    0.7343 |    0.7283 |
+  |   max |    3.1786 |    2.4057 |    3.0204 |
 
 ## Modeling
 Pada tahap ini, kita lansung menggunakan Algoritma Random Forest.
@@ -109,13 +113,18 @@ Karena kita menggunakan 1 model algoritma, maka kita akan melakukan hyperparamet
 ## Evaluation
 Metrik yang digunakan untuk mengevaluasi model adalah MSE atau Mean Squared Error yang digunakan untuk menghitung selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi. Berikut adalah persamaan MSE:
 
-![](/assets/images/formula_mse.jpeg)
+$$MSE = \frac{1}{N}\sum_{i=1}^{N}(y_i-y\_pred_i)^{2}$$
 
 Sebelum menghitung nilai MSE, kita perlu melakukan proses scaling pada data uji agar skala antara data latih dan data uji sama dan bisa dilakukan evaluasi.
 
 Hasil Evaluasi terhadap ketiga model:
 
-![](/assets/images/mse.png)
+
+|     |         train |           test |
+|-----|--------------:|---------------:|
+| RF1 | 210767.598803 |  2182114.71799 |
+| RF2 |  53843.059563 | 2666325.929435 |
+| RF3 |  52874.416766 | 2685907.592525 |
 
 Perbandingan dengan Bar Chart:
 
@@ -129,6 +138,8 @@ Hasil Output:
 
 ![](/assets/images/result.png)
 
+
+## Conclusion
 > [!NOTE]
 > Hasil prediksi model menunjukkan angka prediksi harga yang cukup jauh. Hal tersebut bisa saja terjadi karena dataset yang diberikan mempunyai sebaran data yang cukup besar dan tidak memiliki korelasi yang sangat berpengaruh terhadap 'Price'.
 
@@ -137,3 +148,20 @@ Hasil Output:
 > Selain itu, fitur yang tersisa hanya meiliki nilai korelasi yang sedang atau bahkan rendah.
 
 **Maka dari itu, wajar saja jika hasil prediksi harga rumah mempunyai harga yang cukup jauh, karena bukan dari modelnya melainkan dari fitur didalam dataset yang memiliki persebaran cukup luas dan nilai korelasi yang cenderung rendah**
+
+
+## Daftar Referensi
+
+[^1]: My reference.
+[^1]: [Analisis Perbandingan Metode Regresi Linier, Random Forest Regression dan Gradient Boosted Trees Regression Method untuk Prediksi Harga Rumah](https://journal.isas.or.id/index.php/JACOST/article/download/491/202)
+- [Prediksi Harga Rumah Menggunakan Web Scrapping dan Machine Learning dengan Algoritma Linear Regression](http://jurnal.mdp.ac.id/index.php/jatisi/article/download/701/219)
+- [Optimasi Metode Random Forest Menggunakan Principal Component Analysis Untuk Memprediksi Harga Rumah](http://etheses.uin-malang.ac.id/50422/1/210605220005.pdf)
+
+
+Here is a simple footnote[^1].
+
+A footnote can also have multiple lines[^2].
+
+[^1]: My reference.
+[^2]: To add line breaks within a footnote, prefix new lines with 2 spaces.
+  This is a second line.
