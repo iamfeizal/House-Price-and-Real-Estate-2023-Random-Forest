@@ -149,6 +149,9 @@ Hasil Output:
 
 **Maka dari itu, wajar saja jika hasil prediksi harga rumah mempunyai harga yang cukup jauh, karena bukan dari modelnya melainkan dari fitur didalam dataset yang memiliki persebaran cukup luas dan nilai korelasi yang cenderung rendah**
 
+Here is a simple footnote[^1].
+
+A footnote can also have multiple lines[^2].
 
 ## Daftar Referensi
 
@@ -158,11 +161,3 @@ Hasil Output:
 
 [^3]: [Optimasi Metode Random Forest Menggunakan Principal Component Analysis Untuk Memprediksi Harga Rumah](http://etheses.uin-malang.ac.id/50422/1/210605220005.pdf)
 
-
-Here is a simple footnote[^1].
-
-A footnote can also have multiple lines[^2].
-
-[^1]: My reference.
-[^2]: To add line breaks within a footnote, prefix new lines with 2 spaces.
-  This is a second line.
