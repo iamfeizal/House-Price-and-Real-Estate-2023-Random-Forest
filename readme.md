@@ -225,7 +225,7 @@ Hasil Evaluasi terhadap ketiga model:
 Perbandingan dengan Bar Chart:
 
 ![](/assets/images/eval_bar.png)
-<center><b>Gambar 2</b> - Bar Chart Evaluation</center>
+<center><b>Gambar 17</b> - Bar Chart Evaluation</center>
 
 Berdasarkan hasil evaluasi yang dapat dilihat pada Gambar 2, model terbaik ternyata pada model RF1. Hal tersebut berarti model dengan hyperparameter **n_estimator dan max_depth dengan nilai tinggi bukan berarti akan selalu memberi model terbaik**. Hal tersebut **dapat terjadi karena adanya Overvitting** pada model.
 
@@ -241,7 +241,7 @@ Hasil Output:
 Hasil prediksi model menunjukkan angka prediksi harga yang cukup jauh. Hal tersebut bisa saja terjadi karena dataset yang diberikan mempunyai sebaran data yang cukup besar dan tidak memiliki korelasi yang sangat berpengaruh terhadap 'Price'.
 
 ![](/assets/images/corr_numeric.png)
-<center><b>Gambar 3</b> - Correlation Matrix Numerik</center>
+<center><b>Gambar 18</b> - Correlation Matrix Numerik</center>
 
 Hal tersebut dapat kita amati dari hasil nilai korelasi pada Gambar 3 yang menunjukkan bahwa hanya 1 Fitur yang memiliki nilai korelasi cukup besar, yaitu fitur 'Sq.Ft' dan fitur tersebut hanya memiliki nilai < 0.85.
 Selain itu, fitur yang tersisa hanya meiliki nilai korelasi yang sedang atau bahkan rendah.
