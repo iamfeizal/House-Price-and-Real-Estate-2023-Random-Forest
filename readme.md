@@ -12,7 +12,7 @@ Berikut adalah beberapa alasan utama mengapa model machine learning untuk mempre
 - **Tren Pasar dan Prediksi Masa Depan**: Model machine learning dapat digunakan untuk menganalisis tren pasar sebelumnya dan memprediksi pergerakan harga di masa depan. Hal ini berguna bagi para pemangku kepentingan yang ingin membuat keputusan investasi jangka panjang.
 - **Kemajuan Teknologi**: Teknologi komputasi dan kecerdasan buatan semakin canggih. Dengan adanya data yang lebih baik dan algoritma yang lebih efisien, model machine learning dapat memberikan hasil yang lebih akurat dan cepat.
 
-**Rubrik/Kriteria Tambahan**:
+
 
 ### Mengapa Masalah Tersebut Harus Diselesaikan?
 Masalah prediksi harga rumah dan real estate perlu diselesaikan karena memiliki dampak signifikan pada berbagai aspek kehidupan masyarakat dan ekonomi. Berikut beberapa alasan mengapa masalah ini penting:
@@ -44,14 +44,14 @@ Tujuan dari pernyataan masalah pertama adalah dengan diketahui fitur yang paling
 - **Membuat model *machine learning* untuk memprediksi harga rumah seakurat mungkin berdasarkan fitur yang berpengaruh**<br>
 Tujuan dari pernyataan masalah kedua adalah mengembangkan model prediksi harga rumah dan real estate menggunakan *machine learning* untuk memprediksi harga rumah berdasarkan fitur atau karakteristik yang berpengaruh agar memudahkan pemilik dalam menentukan harga sesuai pasar dan menghindari gejolak pasar.
 
-**Rubrik/Kriteria Tambahan**:
+
   ### Solution statements
   - Menggunakan Model Algoritma *Random Forest*, karena model terbaik untuk membuat prediksi harga rumah adalah model *Random Forest* karena memiliki nilai error paling kecil daripada model regresi linear dan *Gradient Boosted Trees Regression* [^1].
   - Menggunakan rasio perbandingan dataset untuk training dan testing sebesar 80% dan 20%, karena hasil akurasi terbaik menggunakan rasio pembagian dataset tersebut [^2].
   - Menggunakan PCA untuk mengoptimalkan *Random Forest* **(Jika pada dataset terdapat fitur yang memiliki korelasi sangat tinggi)** [^3].
 
 ## Data Understanding
-Pada model kali ini, saya menggunakan dataset dari Kaggle yaitu dataset *Housing Price & Real Estate* - 2023 dari [reenapinto](https://www.kaggle.com/reenapinto).
+Menggunakan dataset dari Kaggle yaitu dataset *Housing Price & Real Estate* - 2023 dari [reenapinto](https://www.kaggle.com/reenapinto).
 Dataset ini berisi 3360 Baris dengan 1 *Header* dan 8 Kolom, yaitu: *Address*, *Price*, *Description*, *Place*, *Beds*, *Bath*, *Sq.Ft*, dan *Website*.
 
 Sumber Dataset: [Housing Price & Real Estate - 2023](https://www.kaggle.com/datasets/reenapinto/housing-price-and-real-estate-2023).
@@ -66,7 +66,7 @@ Sumber Dataset: [Housing Price & Real Estate - 2023](https://www.kaggle.com/data
 - *Sq.Ft* : Luas keseluruhan rumah tersebut dengan satuan Square Foot.
 - *Website* : Alamat *website* tempat rumah tersebut ditawarkan/dijual.
 
-**Rubrik/Kriteria Tambahan**:
+
 ### Exploratory Data Analysis:
 Dalam bagian ini akan dijelaksan mengenai cara menangani missing value dan outliers yang terdapat dalam data dan analisis univariate dan multivariate, yaitu:
 - **Univariate analysis** bertujuan untuk memahami dan menganalisis satu variabel atau fitur pada suatu waktu. Ini digunakan untuk menggambarkan distribusi, karakteristik, dan statistik dasar dari satu variabel tertentu.
@@ -99,7 +99,7 @@ Missing value pada kolom *'Website'*:
 | 160 | 341 Walcrest View SE | 820000 | CA AB T2X 4V9 | Walden |    5 |  3.5 |  2235 |     NaN |
 
 **Kesimpulan:**<br>
-Terdapat nilai null atau *missing value* pada kolom Place dan Website. Karena kita memiliki dataset yang cukup banyak, maka kita bisa menghilangkannya dengan menghapus baris yang mempunyai *missing value* tersebut. 
+Terdapat nilai null atau *missing value* pada kolom Place dan Website. Karena memiliki dataset yang cukup banyak, maka dapat dihilangkan dengan menghapus baris yang mempunyai *missing value* tersebut. 
 
 ##### Outliers
 | ![](/assets/images/box_price.png) <center><b>Gambar 1</b> - Boxplot Price</center> | ![](/assets/images/box_beds.png) <center><b>Gambar 2</b> - Boxplot Beds</center> |
@@ -107,7 +107,7 @@ Terdapat nilai null atau *missing value* pada kolom Place dan Website. Karena ki
 | ![](/assets/images/box_bath.png) <center><b>Gambar 3</b> - Boxplot Bath</center> | ![](/assets/images/box_sq.png) <center><b>Gambar 4</b> - Boxplot Sq.Ft</center> |
 
 **Kesimpulan:**<br>
-Terdapat beberapa *outliers* pada data numerical yang dapat diketahui menggunakan boxplot. *Outliers* tersebut dapat kita hilangkan dengan menghapus atau drop baris yang mempunyai nilai pencilan tersebut.
+Terdapat beberapa *outliers* pada data numerical yang dapat diketahui menggunakan boxplot. *Outliers* tersebut dapat dihilangkan dengan menghapus atau drop baris yang mempunyai nilai pencilan tersebut.
 
 #### Univariate Analysis
 ##### Categorical Features<br>
@@ -116,7 +116,7 @@ Terdapat beberapa *outliers* pada data numerical yang dapat diketahui menggunaka
 | ![](/assets/images/uni_place.png) <center><b>Gambar 7</b> - Univariate Place</center> | ![](/assets/images/uni_web.png) <center><b>Gambar 8</b> - Univariate Website</center> |
 
 **Kesimpulan:**<br>
-Dengan mengamati barchart, kita memperoleh beberapa informasi, antara lain:
+Dengan mengamati barchart, diperoleh beberapa informasi, antara lain:
 - Fitur 'Address' memiliki data dengan persebarang paling luas dan bisa dikatakan sebagai unique data.
 - Categorical Features pada dataset ini memiliki persebaran yang cukup luas dan cukup sulit untuk membuat kategori yang cukup berpengaruh untuk fitur 'Price'.
 ##### Numerical Features<br>
@@ -124,8 +124,8 @@ Dengan mengamati barchart, kita memperoleh beberapa informasi, antara lain:
 <center><b>Gambar 9</b> - Univariate Numeric Features</center>
 
 **Kesimpulan:**<br>
-Dengan mengamati histogram pada Univariate, khususnya variabel price yang merupakan fitur target, kita memperoleh beberapa informasi, antara lain:
-- Peningkatan 'price' sebanding dengan penurunan jumlah sample. Hal ini dapat kita lihat jelas dari histogram 'price' yang grafiknya mengalami penurunan seiring dengan semakin banyaknya jumlah sampel (sumbu x).
+Dengan mengamati histogram pada Univariate, khususnya variabel price yang merupakan fitur target, diperoleh beberapa informasi, antara lain:
+- Peningkatan 'price' sebanding dengan penurunan jumlah sample. Hal ini dapat dilihat jelas dari histogram 'price' yang grafiknya mengalami penurunan seiring dengan semakin banyaknya jumlah sampel (sumbu x).
 - Distribusi 'price' miring ke kanan (right-skewed)
 #### Multivariate Analysis
 ##### Categorical Features<br>
@@ -136,7 +136,7 @@ Dengan mengamati histogram pada Univariate, khususnya variabel price yang merupa
 | ![](/assets/images/multi_web.png) <center><b>Gambar 13</b> - Multivariate Website</center> |
 
 **Kesimpulan:**<br>
-Dengan mengamati rata-rata price relatif terhadap fitur kategori, kita memperoleh insight sebagai berikut:
+Dengan mengamati rata-rata price relatif terhadap fitur kategori, diperoleh insight sebagai berikut:
 - Pada fitur ‘Address’, secara umum, memiliki persebaran yang sangat luas dan bahkan bisa dikatakan sebagai data unique dan memiliki pengaruh rendah terhadap 'price'.
 - Pada fitur ‘Description’, secara umum, hampir setiap rumah memiliki deskripsinya masing-masing dan memiliki pengaruh yang rendah terhadap 'price'.
 - Pada fitur ‘Place’, secara umum, persebaran pada fitur Place lebih sedikit dibanding dengan 'Address' dan 'Description'. Namun, fitur 'Place' masih memiliki pengaruh yang rendah terhadap 'price'.
@@ -151,7 +151,7 @@ Dengan mengamati rata-rata price relatif terhadap fitur kategori, kita memperole
 <center><b>Gambar 15</b> - Correlation Matrix</center>
 
 **Kesimpulan:**<br>
-Dengan mengamati pairplot dan correlation matrix terhadap price pada Gambar 14 dan Gambar 15, kita memperoleh insight sebagai berikut:
+Dengan mengamati pairplot dan correlation matrix terhadap price pada Gambar 14 dan Gambar 15, dimemperoleh insight sebagai berikut:
 - Fitur ‘Sq.Ft’, memiliki hubungan korelasi positif terhadap fitur 'price'.
 - Fitur ‘Sq.Ft’, memiliki korelasi yang paling besar dengan fitur 'price'.
 - Fitur ‘Bath’ dan 'Beds', secara umum, memiliki korelasi sedang terhadap fitur 'price'.
@@ -159,19 +159,19 @@ Dengan mengamati pairplot dan correlation matrix terhadap price pada Gambar 14 d
 - **Kesimpulan akhir, tidak ada fitur yang akan didrop karena masih memiliki hubungan korelasi sedang.**
 
 ## Data Preparation
-Pada tahap data preparation, kita akan mengubah data categorical (**jika ada**) menjadi bentuk yang dapat digunakan dalam algoritma machine learning dan mereduksi dimensi dengan PCA (**jika data mempunyai korelasi yang sangat tinggi**).
+Pada tahap data preparation, ubah data categorical (**jika ada**) menjadi bentuk yang dapat digunakan dalam algoritma machine learning dan mereduksi dimensi dengan PCA (**jika data mempunyai korelasi yang sangat tinggi**).
 - **Tujuan Encoding Categorical Features (Encoding Fitur Katgori)**:<br>
 Ketika bekerja dengan data kategorikal (seperti jenis kelamin, kategori produk, atau kode pos), perlu mengubahnya menjadi bentuk yang dapat digunakan dalam algoritma machine learning yang umumnya membutuhkan data numerik. Encoding kategorikal features adalah cara untuk mengubah data ini menjadi representasi numerik yang sesuai.
 - **Tujuan Reduksi Dimensi menggunakan PCA (Principal Component Analysis)**:<br>
 PCA digunakan untuk mengurangi dimensi dalam dataset yang memiliki banyak fitur (variabel) dan untuk mengidentifikasi pola utama dalam data. Ini berguna untuk mengurangi kompleksitas data, mempercepat algoritma machine learning, dan menghilangkan multicollinearity (korelasi tinggi antara variabel).
-**Rubrik/Kriteria Tambahan**:
+
 ### Encoding Fitur Kategori
-Pada tahap ini, kita akan melewatkan proses encoding categorical features karena categorical features pada dataset tidak terlalu berpengaruh terhadap 'Price' dan sudah kita drop, sehingga pada dataset hanya terdapat numerical features.
+Pada tahap ini, lewati proses encoding categorical features karena categorical features pada dataset tidak terlalu berpengaruh terhadap 'Price' dan sudah didrop, sehingga pada dataset hanya terdapat numerical features.
 ### Reduksi Dimensi dengan PCA
 ![](/assets/images/corr_numeric.png)
 <center><b>Gambar 16</b> - Correlation Matrix</center>
 
-Berdasarkan hasil dari *Correlation Matrix* yang dapat dilihat pada Gambar 1, kita juga akan melewatkan proses reduksi dimensi menggunakan PCA karena tidak ada fitur yang memiliki korelasi sangat tinggi.
+Berdasarkan hasil dari *Correlation Matrix* yang dapat dilihat pada Gambar 1, lewati proses reduksi dimensi menggunakan PCA karena tidak ada fitur yang memiliki korelasi sangat tinggi.
 
 ### Train-Test-Split
 Membagi dataset dengan proporsi 80:20 karena hasil akurasi terbaik menggunakan rasio pembagian dataset tersebut [^2].
@@ -190,28 +190,31 @@ Mengubah nilai fitur agar mendekati distribusi normal agar algoritma machine lea
   |   max |    3.1786 |    2.4057 |    3.0204 |
 
 ## Modeling
-Pada tahap ini, kita lansung menggunakan Algoritma *Random Forest*.
+Model langsung menggunakan Algoritma *Random Forest*.
 Hal tersebut karena Algoritma *Random Forest* memiliki nilai error paling kecil daripada model regresi linear dan *Gradient Boosted Trees Regression* [^1]
 
-**Rubrik/Kriteria Tambahan (Opsional)**: <br>
-Karena kita menggunakan 1 model algoritma, maka kita akan melakukan *hyperparameter tuning*.
+Perbedaan Algoritma-algoritma tersebut antara lain:
+- *Random Forest Regression* merupakan algoritma *machine learning* yang proses pengujiannya menggunakan konsep *supervised* dalam membangun kelas classifier. Algoritma ini mengkombinasikan prediksi berdsarkan *Multiple Decision Tree* [^1].
+- Metode *Gradient Boosted Trees* merupakan metode penggabungan dari beberapa *decision trees*, tetapi tidak seperti *Random Forest*, dimana *tree* dilatih secara paralel pada sampel *bootstrap* dari kumpulan data asli, *tree* dilatih secara berurutan, metode ini juga merupakan metode *gradient descent* yang dimodifikasi dengan *boosting algorithm* untuk meningkatkan akurasi [^1].
+- *Linear Regression* merupakan jenis model dengan teknik yang bertujuan dalam menganalisis estimasi nilai variabel dependen dengan rentang nilai variabel independen [^1].
+
+Karena menggunakan 1 model algoritma, maka akan dilakukan *hyperparameter tuning*.
 - Model *Random Forest* 1 (RF1), dengan *n_estimators=10, max_depth=5, random_state=15, n_jobs=-1*
 - Model *Random Forest* 2 (RF2), dengan *n_estimators=100, max_depth=50, random_state=40, n_jobs=-1*
 - Model *Random Forest* 3 (RF3), dengan *n_estimators=2000, max_depth=1000, random_state=1500, n_jobs=-1*
 
-Pada tahap ini, kita mencari tuning yang paling optimal berdasarkan data dan melakukan training model berulang kali agar mendapatkan tuning yang maksimal.
-- Disini kita **mengubah** *n_estimator*(untuk jumlah *tree* di *forest*), mengubah max_depth(untuk panjang pohon), dan mengubah *random_state*(untuk mengontrol *random* *number* *generator*).
-- *Hyperparameter* yang **tidak diubah** adalah *n_jobs*, disini kita tidak mengubahnya agar pekerjaan perhitungan model dilakukan secara paralel dengan memaksimalkan *thread* pada komputer.
+Pada tahap ini, dicari tuning yang paling optimal berdasarkan data dan melakukan training model berulang kali agar mendapatkan tuning yang maksimal.
+- mengubah *n_estimator*(untuk jumlah *tree* di *forest*), mengubah max_depth(untuk panjang pohon), dan mengubah *random_state*(untuk mengontrol *random* *number* *generator*).
+- *Hyperparameter* yang **tidak diubah** adalah *n_jobs*, agar pekerjaan perhitungan model dilakukan secara paralel dengan memaksimalkan *thread* pada komputer.
 
 ## Evaluation
 Metrik yang digunakan untuk mengevaluasi model adalah MSE atau *Mean Squared Error*.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:<br>
 *Mean Squared Error* digunakan untuk menghitung selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi. Berikut adalah persamaan MSE:
 
 $$MSE = \frac{1}{N}\sum_{i=1}^{N}(y_i-y\_pred_i)^{2}$$
 
-Sebelum menghitung nilai MSE, kita perlu melakukan proses scaling pada data uji agar skala antara data latih dan data uji sama dan bisa dilakukan evaluasi.
+Sebelum menghitung nilai MSE, perlu dilakukan proses scaling pada data uji agar skala antara data latih dan data uji sama dan bisa dilakukan evaluasi.
 
 Hasil Evaluasi terhadap ketiga model:
 
@@ -243,7 +246,7 @@ Hasil prediksi model menunjukkan angka prediksi harga yang cukup jauh. Hal terse
 ![](/assets/images/corr_numeric.png)
 <center><b>Gambar 18</b> - Correlation Matrix Numerik</center>
 
-Hal tersebut dapat kita amati dari hasil nilai korelasi pada Gambar 3 yang menunjukkan bahwa hanya 1 Fitur yang memiliki nilai korelasi cukup besar, yaitu fitur 'Sq.Ft' dan fitur tersebut hanya memiliki nilai < 0.85.
+Hal tersebut dapat dilihat dari hasil nilai korelasi pada Gambar 3 yang menunjukkan bahwa hanya 1 Fitur yang memiliki nilai korelasi cukup besar, yaitu fitur 'Sq.Ft' dan fitur tersebut hanya memiliki nilai < 0.85.
 Selain itu, fitur yang tersisa hanya meiliki nilai korelasi yang sedang atau bahkan rendah.
 
 > [!IMPORTANT]
@@ -252,8 +255,8 @@ Selain itu, fitur yang tersisa hanya meiliki nilai korelasi yang sedang atau bah
 
 ## Daftar Referensi
 
-[^1]: [Analisis Perbandingan Metode Regresi Linier, Random Forest Regression dan Gradient Boosted Trees Regression Method untuk Prediksi Harga Rumah](https://journal.isas.or.id/index.php/JACOST/article/download/491/202)
+[^1]: [E. Fitri, "Analisis Perbandingan Metode Regresi Linier, Random Forest Regression dan Gradient Boosted Trees Regression Method untuk Prediksi Harga Rumah," Journal of Applied Computer Science and Technology (JACOST), vol.4, no.1, pp.58-64, 2020.](https://journal.isas.or.id/index.php/JACOST/article/download/491/202)
 
-[^2]: [Prediksi Harga Rumah Menggunakan Web Scrapping dan Machine Learning dengan Algoritma Linear Regression](http://jurnal.mdp.ac.id/index.php/jatisi/article/download/701/219)
+[^2]: [A. Saiful, S. Andeyana, A. Gunaryati, "Prediksi Harga Rumah Menggunakan Web Scrapping dan Machine Learning dengan Algoritma Linear Regression," Jurnal Teknik Informatika dan Sistem Informasi, vol.8, no.1, pp.41-50, 2021](http://jurnal.mdp.ac.id/index.php/jatisi/article/download/701/219)
 
-[^3]: [Optimasi Metode Random Forest Menggunakan Principal Component Analysis Untuk Memprediksi Harga Rumah](http://etheses.uin-malang.ac.id/50422/1/210605220005.pdf)
+[^3]: [E. A. F. Elmuna, "Optimasi Metode Random Forest Menggunakan Principal Component Analysis Untuk Memprediksi Harga Rumah," Etheses UIN Malang, 2023](http://etheses.uin-malang.ac.id/50422/1/210605220005.pdf)
